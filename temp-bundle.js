@@ -10,11 +10,14 @@ console.log('from main: '+temp1.getLocal());
 },{"./temp1":2,"./temp2":3}],2:[function(require,module,exports){
 var local = 0;
 
-local++;
-
 exports.getLocal = function(){
 	return local;
 };
+
+exports.incrementLocal = function(){
+	local++;
+};
+
 
 },{}],3:[function(require,module,exports){
 var temp1 = require('./temp1');
@@ -29,7 +32,7 @@ console.log('from temp2: '+temp1.getLocal());
 },{"./temp1":2,"./temp3":4}],4:[function(require,module,exports){
 var temp1 = require('./temp1');
 
-
+temp1.incrementLocal();
 console.log('from temp3: '+temp1.getLocal());
 console.log('from temp3: '+temp1.getLocal());
 console.log('from temp3: '+temp1.getLocal());
